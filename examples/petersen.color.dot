@@ -1,0 +1,30 @@
+graph "Petersen" {
+node [color="black", fontname="Arial", height="0.400000", label="\N", shape="circle", width="0.400000"];
+edge [color="black"];
+0 [fillcolor="#ffb482", style=filled];
+1 [fillcolor="#8de5a1", style=filled];
+2 [fillcolor="#a1c9f4", style=filled];
+3 [fillcolor="#ffb482", style=filled];
+4 [fillcolor="#8de5a1", style=filled];
+5 [fillcolor="#8de5a1", style=filled];
+6 [fillcolor="#ffb482", style=filled];
+7 [fillcolor="#ffb482", style=filled];
+8 [fillcolor="#a1c9f4", style=filled];
+9 [fillcolor="#a1c9f4", style=filled];
+0 -- 1  [color="blue", key=0, len="2.6"];
+0 -- 4  [color="blue", key=0, len="2.6"];
+0 -- 5  [color="red", key=0, weight="5"];
+1 -- 2  [color="blue", key=0, len="2.6"];
+1 -- 6  [color="red", key=0, weight="5"];
+2 -- 3  [color="blue", key=0, len="2.6"];
+2 -- 7  [color="red", key=0, weight="5"];
+3 -- 4  [color="blue", key=0, len="2.6"];
+3 -- 8  [color="red", key=0, weight="5"];
+4 -- 9  [color="red", key=0, weight="5"];
+5 -- 7  [key=0];
+5 -- 8  [key=0];
+6 -- 9  [key=0];
+6 -- 8  [key=0];
+7 -- 9  [key=0];
+}
+

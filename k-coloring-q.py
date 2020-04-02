@@ -5,6 +5,7 @@ from seaborn import color_palette
 
 import sys
 import random
+from itertools import combinations
 
 
 def main(G, k):
@@ -53,7 +54,22 @@ def main(G, k):
         # agregamos todas las aristas entre vértices
         s.add(edge(Int(e[0]), Int(e[1])))
 
-    if s.check().r > 0:
+    for e in combinations(G.nodes, 2):
+        if (*e, 0) not in G.edges:
+            v = e[0]
+            w = e[1]
+
+            if _vars.get(v) is None:
+                _vars[v] = Int(v)
+            if _vars.get(w) is None:
+                _vars[w] = Int(w)
+            
+            # agregamos todas las aristas que NO están conectadas
+            s.add(Not(edge(Int(e[0]), Int(e[1]))))
+
+
+
+    if s.check() == sat:
         m = s.model()
 
         for k, v in _vars.items():
@@ -65,7 +81,6 @@ def main(G, k):
 
 
         print(to_pydot(G).to_string())
-
     else:
         print("unsat", file=sys.stderr)
 
